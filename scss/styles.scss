@@ -18,7 +18,7 @@ body{
     padding: 0;
     margin: 0;
     line-height: 1.6;
-    background: url(imagenes/background.jpg) no-repeat center center fixed;
+    background: url(../imagenes/background.jpg) no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -57,26 +57,25 @@ nav{
     border-radius: 2px;
 }
 
-.enlaces-menu{
+ul.enlaces-menu{
     display: flex;
     padding: 0;
+    & > li{
+        padding: 0 40px;
+        list-style-type: none;
+        transition: 0.5s;
+        &:hover{
+            background-color: rgb(194, 165, 121)
+        }
+        & > a{
+            text-decoration: none;
+            font-size: 1.8rem;
+            color: blanchedalmond;
+        }
+    }
 }
 
-.enlaces-menu li{
-    padding: 0 40px;
-    list-style-type: none;
-    transition: 0.5s;
-}
 
-.enlaces-menu li a{
-    text-decoration: none;
-    font-size: 1.8rem;
-    color: blanchedalmond;
-}
-
-.enlaces-menu li:hover{
-    background-color: rgb(194, 165, 121);
-}
 
 /*responsive*/
 @media (max-width: 768px){
@@ -129,7 +128,3 @@ nav{
     display: flex;
     animation: muestra-menu 350ms ease-in-out both;
 }
-
-
-
-

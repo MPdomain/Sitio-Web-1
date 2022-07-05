@@ -1,0 +1,15 @@
+{
+    "author": "Mario Palumbo",
+    "description": "proyecto de coder house",
+    "license": "MIT",
+    "name": "coder-proyecto",
+    "scripts": {
+        "watch:css": "nodemon -e scss -x \"npm run build:css\"",
+        "build:css": "node-sass --output-style compressed scss/styles.scss css/estilos.css"
+    },
+    "version": "1.0.0",
+    "devDependencies": {
+        "node-sass": "^4.14.1",
+        "nodemon": "^2.0.4"
+    }
+}
