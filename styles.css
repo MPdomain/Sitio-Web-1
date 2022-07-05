@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+    background: url(imagenes/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.nav-color{
+    background-color: black;
+}
+
+.logo{
+    font-family:'Lobster', cursive;;
+    color: blanchedalmond;
+    font-size: 25px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 8vh;
+}
+
+.ham{
+    display: none;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.ham span{
+    display: block;
+    background-color: aliceblue;
+    height: 3px;
+    width: 28px;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.enlaces-menu{
+    display: flex;
+    padding: 0;
+}
+
+.enlaces-menu li{
+    padding: 0 40px;
+    list-style-type: none;
+    transition: 0.5s;
+}
+
+.enlaces-menu li a{
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: blanchedalmond;
+}
+
+.enlaces-menu li:hover{
+    background-color: rgb(194, 165, 121);
+}
+
+/*responsive*/
+@media (max-width: 768px){
+    body{
+        overflow: hidden;
+    }
+
+    .logo{
+        padding-left: 25px;
+    }
+
+    .ham{
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+    }
+
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 0;
+    }
+
+    .enlaces-menu{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 92vh;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: none;
+        opacity: 0;
+    }
+
+    .enlaces-menu li{
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+@keyframes muestra-menu{
+    from{opcaity:0}
+    to{opacity: 1;}
+}
+
+.enlaces-menu.activado{
+    display: flex;
+    animation: muestra-menu 350ms ease-in-out both;
+}
+
+
+
+
