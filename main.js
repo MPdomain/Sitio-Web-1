@@ -1,7 +1,8 @@
 const ham = document.querySelector('.ham');
-const enlaces = document.querySelector('.enlaces-menu');
+const menu = document.querySelector('.nav-color');
 
 
 ham.addEventListener('click', () => {
-    enlaces.classList.toggle('activado');
+    menu.classList.toggle('activado');
 })
+

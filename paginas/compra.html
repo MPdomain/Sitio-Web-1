@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/imagenes/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/imagenes/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Under-Eventos</title>
+</head>
+<body>
+    <header>
+        <nav class="nav-color">
+            <h1 class="logo titulo">Under</h1>
+            <ul class="enlaces-menu">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/paginas/eventos.html">Eventos</a></li>
+                <li><a href="/paginas/calendario.html">Calendario</a></li>
+            </ul>
+            <button class="ham" type="button">
+                <span class="br1"></span>
+                <span class="br2"></span>
+                <span class="br3"></span>
+            </button>
+        </nav>
+    </header>
+    <div class="main-box"></div>
+    <footer></footer>
+    <script src="/main.js"></script>
+    <script>
+        ScrollReveal({
+            reset: true,
+            distance: '60px',
+            duration: 2500,
+            delay:400
+        });
+        ScrollReveal().reveal('.titulo', { delay: 300, origin: 'left' });
+    </script>
+</body>
+</html>

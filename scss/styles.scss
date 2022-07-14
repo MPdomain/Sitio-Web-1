@@ -1,130 +1,241 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-    font-size: 62.5%;
-    box-sizing: border-box;
-    text-decoration: none;
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
-*, *::before, *::after{
-    box-sizing: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-body{
-    padding: 0;
-    margin: 0;
-    line-height: 1.6;
-    background: url(../imagenes/background.jpg) no-repeat center center fixed;
-    background-size: cover;
+.standard-flex {
+  display: flex;
+  justify-content: space-around;
 }
 
-.nav-color{
-    background-color: black;
-}
-
-.logo{
-    font-family:'Lobster', cursive;;
+@mixin text-standard {
+    font-family: "Lobster", cursive;
     color: blanchedalmond;
-    font-size: 25px;
 }
 
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    min-height: 8vh;
+$background: ('fondo': #000);
+
+body {
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+  background: url(/imagenes/background.jpg) no-repeat center center fixed;
+  background-size: cover;
+  animation: transitionIn 0.75s;
 }
 
-.ham{
-    display: none;
-    cursor: pointer;
-    border: none;
-    margin: 0;
-    padding: 0;
-    background-color: transparent;
+.nav-color {
+  background-color: map-get($map: $background, $key: fondo);
 }
 
-.ham span{
+.logo {
+    @include text-standard();
+  font-size: 3rem;
+}
+
+nav {
+  @extend .standard-flex;
+  align-items: center;
+  min-height: 8vh;
+}
+
+.ham {
+  display: none;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  & span {
     display: block;
     background-color: aliceblue;
-    height: 3px;
-    width: 28px;
-    margin: 10px auto;
-    border-radius: 2px;
+    height: 0.5rem;
+    width: 3rem;
+    margin: 1rem auto;
+    border-radius: 0, 5rem;
+    transition: 0.2s 0.1s;
+  }
 }
 
-ul.enlaces-menu{
-    display: flex;
-    padding: 0;
-    & > li{
-        padding: 0 40px;
-        list-style-type: none;
-        transition: 0.5s;
-        &:hover{
-            background-color: rgb(194, 165, 121)
-        }
-        & > a{
-            text-decoration: none;
-            font-size: 1.8rem;
-            color: blanchedalmond;
-        }
+.enlaces-menu {
+  display: flex;
+  padding: 0;
+  & > li {
+    padding: 0 40px;
+    list-style-type: none;
+    transition: 0.5s;
+    &:hover {
+      background-color: rgb(194, 165, 121);
     }
+    & > a {
+      text-decoration: none;
+      font-size: 1.8rem;
+      color: blanchedalmond;
+    }
+  }
 }
+
+.section-evento{
+  @extend .standard-flex;
+  margin: 15rem;
+  background-color: map-get($map: $background, $key: fondo );
+  border-style: solid;
+  border-color: blanchedalmond;
+  padding: 5rem;
+  h2{
+    @include text-standard();
+    font-size: 4rem
+  }
+  p{
+    @include text-standard();
+    font-size: 2rem
+  }
+}
+
+.boton-compra{
+  @extend .standard-flex;
+  font-size: 2rem;
+}
+
+.entrada{
+  @include text-standard();
+  padding: 1rem;
+  transition-duration: 0.5s;
+  &:hover{
+    background-color: blanchedalmond;
+    color: black;
+  }
+}
+
+.footer {
+    padding-top: 2rem;
+  background-color: map-get($map: $background, $key: fondo);
+  @extend .standard-flex;
+  .footer-title{
+    @include text-standard;
+  }
+}
+
+.main-box {
+  animation: transitionIn 0.75s;
+  flex: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 /*responsive*/
-@media (max-width: 768px){
-    body{
-        overflow: hidden;
-    }
+@media (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
 
-    .logo{
-        padding-left: 25px;
-    }
+  .logo {
+    padding-left: 3rem;
+  }
 
-    .ham{
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 25px;
-    }
+  .ham {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+  }
 
-    nav{
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 25px 0;
-    }
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem 0;
+  }
 
-    .enlaces-menu{
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 92vh;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        display: none;
+  .enlaces-menu {
+    justify-content: space-around;
+    align-items: center;
+    height: 92vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: none;
+    opacity: 0;
+    & li {
+      width: 100%;
+      text-align: center;
+      padding: 1.5rem;
+    }
+  }
+  .nav-color {
+    display: block;
+    &.activado {
+      .enlaces-menu {
+        display: flex;
+        animation: muestra-menu 350ms ease-in-out both;
+      }
+      .br1 {
+        transform: translate(0, 1.5rem) rotate(-45deg);
+      }
+
+      .br2 {
         opacity: 0;
+      }
+      .br3 {
+        transform: translate(0, -1.5rem) rotate(45deg);
+      }
     }
-
-    .enlaces-menu li{
-        width: 100%;
-        text-align: center;
-        padding: 20px;
-    }
+  }
 }
 
-@keyframes muestra-menu{
-    from{opcaity:0}
-    to{opacity: 1;}
+@keyframes muestra-menu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.enlaces-menu.activado{
-    display: flex;
-    animation: muestra-menu 350ms ease-in-out both;
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
 }
