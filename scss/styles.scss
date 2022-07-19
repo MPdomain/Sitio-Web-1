@@ -10,6 +10,10 @@ html {
   text-decoration: none;
 }
 
+li{
+  list-style: none;
+}
+
 *,
 *::before,
 *::after {
@@ -127,12 +131,112 @@ nav {
   .footer-title{
     @include text-standard;
   }
+  h3{
+    @include text-standard();
+    font-family:'roboto', sans-serif;
+    font-size: 2rem;
+  }
+  h5{
+    @include text-standard()
+  }
+  p{
+    color: blanchedalmond;
+  }
+  ul{
+    display: flex;
+    li{
+      justify-content: space-between;
+    }
+  }
+}
+
+hr.linea{
+  border-top: 1px solid blanchedalmond;
+  width: 100%;
 }
 
 .main-box {
   animation: transitionIn 0.75s;
   flex: 1;
 }
+
+.contacto{
+  flex: 1;
+  background-color: #000;
+  margin: 5rem;
+  h2{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    font-family: "Lobster", cursive;
+    color: blanchedalmond;
+    font-size: 4rem;
+  }
+  .form-contacto{
+    flex-direction: column;
+    display: flex;
+    align-self: center;
+    margin: 1rem 6rem;
+    padding: 5rem;
+    label{
+      margin-left: 15rem;
+      margin-right: 15rem;
+    }
+}
+}
+
+.input-text{
+  text-align: center;
+}
+
+
+.main-calendar{
+  background-color: blanchedalmond;
+  margin: 6rem;
+  span{
+    font-family: "Lobster", cursive;
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .calendario{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    li{
+      text-align: center;
+    }
+    .dia{
+      text-align: center;
+    }
+    .dias{
+      list-style: none;
+      text-align: right;
+      padding: 2em 3em;
+    }
+  }
+}
+
+.nosotros-box{
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  margin: 10rem;
+  h2{
+    @include text-standard();
+    color: #000;
+    font-size: 15rem;
+  }
+}
+
+.texto-nosotros{
+  p{
+    font-family: "Lobster", cursive;
+    color: blanchedalmond;
+    font-size: 9rem;
+  }
+}
+
 
 
 
