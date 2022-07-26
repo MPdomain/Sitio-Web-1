@@ -16,7 +16,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/imagenes/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <script src="https://unpkg.com/scrollreveal"></script>
-    <title>Under-Eventos</title>
+    <title>Under-Compra</title>
 </head>
 <body>
     <header>
@@ -26,6 +26,7 @@
                 <li><a href="/index.html">Inicio</a></li>
                 <li><a href="/paginas/Nosotros.html">Nosotros</a></li>
                 <li><a href="/paginas/calendario.html">Calendario</a></li>
+                <li><a href="/paginas/contacto.html">Contacto</a></li>
             </ul>
             <button title="menu" class="ham" type="button">
                 <span class="br1"></span>
@@ -34,8 +35,70 @@
             </button>
         </nav>
     </header>
-    <div class="main-box"></div>
-    <footer></footer>
+    <div class="main-box">
+        <div class="section-compra">
+            <form action="Pagina de contacto">
+                <h2>Compra tu entrada</h2>
+                <div class="media-name-surname">
+                <label for="Nombre"></label>
+                <input type="text" placeholder="Nombre" required>
+                <label for="Apellido"></label>
+                <input  type="text" placeholder="Apellido" required>
+                </div>
+                <label for="Email"></label>
+                <input type="text" placeholder="Email" required>
+                <label for="Telefono"></label>
+                <input type="tel" placeholder="Telefono" required>
+                <label for="Cantidad de entradas"></label>
+                <input placeholder="Numero de entradas" type="number" min="1" max="5"> <br>
+                <label for="Metodo de pago"></label>
+                <select title="tarjeta">
+                <option value="Visa">Visa</option>
+                <option value="MasterCard">MasterCard</option>
+                <option value="MercadoPago">MercadoPago</option>
+                <option value="Efectivo">Efectivo</option>
+                </select>
+                <label for="Nombre de tarjeta"></label>
+                <input type="text" placeholder="Nombre de la tarjeta" required>
+                <label for="Numero de tarjeta"></label>
+                <input type="password" placeholder="Numero de tarjeta" required>
+                <label for="CVV"></label>
+                <input type="password" placeholder="CVV" required>
+                <input type="button" onclick="alert('Gracias por tu compra')" value="Comprar entrada">
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h2 class="footer-title">UNDER</h2>
+                </div>
+                <div class="col-md-4">
+                    <h3>navegacion</h3>
+                    <nav class="nav-footer">
+                        <ul class="li-footer">
+                            <li><a href="/index.html">Inicio</a></li>
+                            <li><a href="/paginas/Nosotros.html">Nosotros</a></li>
+                            <li><a href="/paginas/calendario.html">Calendario</a></li>
+                            <li><a href="/paginas/contacto.html">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-4">
+                    <h3>newsletter</h3>
+                    <p>Te recordamos los ultimos eventos</p>
+                    <form action="">
+                        <input placeholder="Correo">
+                    </form>
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <hr class="linea">
+                <h5>&copy; la.under.com</h5>
+            </div>
+        </div>
+    </footer>
     <script src="/main.js"></script>
     <script>
         ScrollReveal({

@@ -208,6 +208,9 @@ hr.linea{
     }
     .dia{
       text-align: center;
+      &.abbr{
+        display: none;
+      }
     }
     .dias{
       list-style: none;
@@ -222,20 +225,55 @@ hr.linea{
   justify-content: center;
   flex: 1;
   margin: 10rem;
+  background-color: #000;
   h2{
     @include text-standard();
-    color: #000;
     font-size: 15rem;
   }
-}
-
-.texto-nosotros{
   p{
     font-family: "Lobster", cursive;
     color: blanchedalmond;
-    font-size: 9rem;
+    font-size: 4rem;
+    text-align: center;
   }
 }
+
+.section-compra{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-right: 35rem;
+  margin-left: 35rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  background-color: #000;
+  h2{
+    @include text-standard();
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 10rem;
+  }
+  label{
+    margin: 0.5rem;
+  }
+}
+
+.li-footer{
+  > *:not(:first-child){
+    margin-left: 16px;
+  }
+  a{
+    color: blanchedalmond;
+  }
+}
+
 
 
 
@@ -266,9 +304,58 @@ hr.linea{
 
 /*responsive*/
 @media (max-width: 768px) {
-  body {
+
+  .main-calendar{
+    .calendario{
+      .dia{
+        &.abbr{
+          display: unset;
+        }
+        &:not(.abbr){
+          display: none;
+        }
+      }
+      .dias{
+        padding: 1em 2em;
+      }
+    }
+  }
+
+  .section-compra{
+    .media-name-surname{
+      display: flex;
+      flex-direction: column;
+    }
+    h2{
+      display: flex;
+      justify-content: center;
+    }
+    background-color: black;
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+  .nosotros-box{
+    h2{
+      font-size: 7rem;
+      display: flex;
+      justify-content: center;
+    }
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-footer{
+    display: flex;
+    align-items: center;
+  }
+
+  .no-scroll{
     overflow: hidden;
   }
+
+  .section-evento{
+    flex-direction: column;
+  }
+
 
   .logo {
     padding-left: 3rem;
@@ -307,6 +394,7 @@ hr.linea{
     &.activado {
       .enlaces-menu {
         display: flex;
+        flex-direction: column;
         animation: muestra-menu 350ms ease-in-out both;
       }
       .br1 {
