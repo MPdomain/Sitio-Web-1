@@ -4,6 +4,7 @@
     "license": "MIT",
     "name": "coder-proyecto",
     "scripts": {
+        "build":"npm run build:css",
         "watch:css": "nodemon -e scss -x \"npm run build:css\"",
         "build:css": "node-sass --output-style compressed scss/styles.scss css/estilos.css"
     },
