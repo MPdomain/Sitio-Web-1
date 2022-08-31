@@ -37,34 +37,36 @@
     </header>
     <div class="main-box">
         <div class="section-compra">
-            <form action="Pagina de contacto">
+            <form id="compraEntradaForm">
                 <h2>Compra tu entrada</h2>
                 <div class="media-name-surname">
                 <label for="Nombre"></label>
-                <input type="text" placeholder="Nombre" required>
+                <input name="nombre" type="text" placeholder="Nombre" required>
                 <label for="Apellido"></label>
-                <input  type="text" placeholder="Apellido" required>
+                <input name="apellido"  type="text" placeholder="Apellido" required>
                 </div>
                 <label for="Email"></label>
-                <input type="text" placeholder="Email" required>
+                <input name="email" type="text" placeholder="Email" required>
                 <label for="Telefono"></label>
-                <input type="tel" placeholder="Telefono" required>
+                <input name="telefono" type="tel" placeholder="Telefono" required>
+                <span class="errores" id="error-telefono"></span>
                 <label for="Cantidad de entradas"></label>
-                <input placeholder="Numero de entradas" type="number" min="1" max="5"> <br>
+                <input name="numeroEntradas" placeholder="Numero de entradas" type="number" min="1" max="5"> <br>
                 <label for="Metodo de pago"></label>
-                <select title="tarjeta">
+                <select name="tipoTarjeta" title="tarjeta">
                 <option value="Visa">Visa</option>
                 <option value="MasterCard">MasterCard</option>
                 <option value="MercadoPago">MercadoPago</option>
                 <option value="Efectivo">Efectivo</option>
                 </select>
                 <label for="Nombre de tarjeta"></label>
-                <input type="text" placeholder="Nombre de la tarjeta" required>
+                <input name="nombreTarjeta" type="text" placeholder="Nombre de la tarjeta" required>
                 <label for="Numero de tarjeta"></label>
-                <input type="password" placeholder="Numero de tarjeta" required>
+                <input name="numeroTarjeta" type="password" placeholder="Numero de tarjeta" required>
                 <label for="CVV"></label>
-                <input type="password" placeholder="CVV" required>
-                <input type="button" onclick="alert('Gracias por tu compra')" value="Comprar entrada">
+                <input name="codigoSeguridad" type="password" placeholder="CVV" required>
+                <span class="errores" id="error-codigo"></span>
+                <input id="botonCompraEntrada" type="submit" value="Comprar entrada">
             </form>
         </div>
     </div>
