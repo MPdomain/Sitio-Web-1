@@ -95,3 +95,38 @@ function esNumero(palabra){
     }
     return true
 }
+
+
+const puestoClasses = {
+    libre : 'lugar disponible',
+    ocupado : 'lugar ocupado',
+    invalido: 'no existe'
+}
+
+const crearPuesto = (i,j) => {
+    const seat =   document.createElement ('div')
+    const puesto = puesto [i][j]
+    const tipo = puesto === null ? 'invalido' : puesto ? 'ocupado' : 'libre'
+
+    seat.classList.add(puestoClasses[tipo])
+    if (puesto ===null ) return seat
+    seat.onclick = () => {
+        const puesto  = puesto [i][j]
+        const tipo = puesto ? 'ocupado' : 'libre'
+        puesto[i][j] = !puesto
+        seat.classList.remove(puestoClasses[tipo])
+        const nuevoTipo = !puesto ? 'ocupado' : 'libre'
+        elm.classList.add(puestoClasses[nuevoTipo])
+    }
+    return seat
+}
+
+const puestosSeat = document.getElementById('puesto')
+for(let i = 0; i < puesto.length; i++) {
+    const columnaSeat = document.createElement('div')
+    columnaSeat.classList.add('columna-de-puestos')
+    puestosSeat.appendChild(columnaSeat)
+    for(let j = 0; j < columna.length; j++) {
+        columnaElm.appendChild(crearPuesto(i, j));
+    }
+}
